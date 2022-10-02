@@ -43,9 +43,10 @@ const main = async () => {
       case "6":
         const id = await listadoTareasBorrar(tareas.listado);
         const resp = await confirmar(tareas.listado.find(x => x.id === id),'borrar');
-        if(resp)tareas.borrarTarea(id);
+        if(resp){tareas.borrarTarea(id); console.log('Tarea borrada')}
         break;
       case "0":
+        return;
         break;
     }
 
